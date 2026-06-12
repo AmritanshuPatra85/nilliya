@@ -94,7 +94,6 @@ export default function BookPage() {
   const generateSlots = async () => {
     if (!selectedDate || !selectedService) return
 
-    // Check if date is closed
     if (bookingSettings.closed_dates.includes(selectedDate)) {
       setAvailableSlots([])
       return
@@ -249,7 +248,7 @@ export default function BookPage() {
       '\nTime: ' + selectedSlot +
       '\nReservation Paid: Rs.' + reservationAmount +
       '\n\nPlease confirm my booking.'
-    return 'https://wa.me/91XXXXXXXXXX?text=' + encodeURIComponent(msg)
+    return 'https://wa.me/916372806696?text=' + encodeURIComponent(msg)
   }
 
   return (
@@ -501,7 +500,7 @@ export default function BookPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                
+                <a
                   href={buildWhatsappUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -509,7 +508,7 @@ export default function BookPage() {
                 >
                   Confirm on WhatsApp
                 </a>
-                
+                <a
                   href="/"
                   className="inline-block border border-[#EEF4FF]/30 text-[#EEF4FF] px-8 py-4 text-sm tracking-widest uppercase hover:border-[#EEF4FF] transition-all"
                 >
